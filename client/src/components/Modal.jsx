@@ -7,8 +7,7 @@ const Modal = (props) => {
     
     return (
         <>
-        <Button type={props.type} text={props.text}
-         onClick={() => setShouldShow(true)}/>
+        <Button type={props.type} text={props.text} clickFunction={() => setShouldShow(true)}/>
         {shouldShow && (
             <div 
              className='fixed flex justify-center items-center top-0 left-0 right-0 inset-0 bg-gray-500 bg-opacity-75 transition-opacity'

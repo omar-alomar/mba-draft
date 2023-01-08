@@ -9,3 +9,10 @@ class Project(models.Model):
     dld = models.TextField()
     manager = models.TextField()
     comments = models.TextField()
+
+
+class Contact(models.Model):
+    fName = models.TextField(max_length=255)
+    lName = models.TextField(max_length=255, null=True)
+    telephone = models.TextField()
+    email = models.TextField()

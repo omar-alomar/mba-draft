@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = ( {type, text} ) => {
+const Button = ( {type, text, clickFunction} ) => {
     const types = {
         green: 'btn btn-green',
         yellow: 'btn btn-yellow',
@@ -9,7 +9,7 @@ const Button = ( {type, text} ) => {
     }
   return (
     <>
-        <button className={types[type]}>{text}</button>
+        <button className={types[type]} onClick={clickFunction}>{text}</button>
     </>
   )
 }
