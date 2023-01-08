@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.navbar {
+    /* display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 20%; */
+    /* background-color: #6B293C; */
+    color: #fff;
+}
+
+.navbar__item {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.navbar__item:hover {
+    background-color: #B85873;
+    cursor: pointer;
+}
+.navbar__item-text, .navbar__item-img {
+    margin: 2px;
+}
+.navbar__item-text {
+    padding-left: 6px;
+}
+
+@layer components {
+    .navbar__profile {
+        @apply my-5 ml-5 flex;
+    }
+    .navbar__profile__item-text {
+        @apply text-xl my-auto pl-2;
+    }
+}
+
