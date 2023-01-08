@@ -8,6 +8,11 @@
         @apply mx-10 mb-5 py-2 px-4;
         @apply hover:bg-gray-100 text-black;
     }
+    .project__card {
+        @apply bg-gray-300 text-white font-semibold rounded-lg shadow-md flex;
+        @apply mx-10 mb-5 py-2 px-4;
+        @apply hover:bg-gray-100 text-black;
+    }
 }
 
 .contacts__form {

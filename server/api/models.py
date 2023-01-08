@@ -9,3 +9,4 @@ class Project(models.Model):
     dld = models.TextField()
     manager = models.TextField()
     comments = models.TextField()
+    apfo = models.DateField(null=True)
