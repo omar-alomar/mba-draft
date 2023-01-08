@@ -7,6 +7,7 @@ import Announcements from './pages/Announcements';
 import Contacts from './pages/Contacts';
 import Links from './pages/Links';
 import Home from './pages/Home';
+import ProjectOverview from './components/ProjectOverview';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/announcements' element={<Announcements />} />
           <Route path='/contacts' element={<Contacts />} />
           <Route path='/links' element={<Links />} />
+          <Route path='/projects/:id' element={<ProjectOverview />} />
         </Routes>
       </div>
     </BrowserRouter>
