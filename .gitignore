@@ -186,4 +186,13 @@ psd
 thumb
 sketch
 
+
+# Virtual environments venv (windows)
+
+./server/pyvenv.cfg
+./server/Scripts
+./server/Lib
+./server/Include
+
 # End of https://www.toptal.com/developers/gitignore/api/react,django
+
