@@ -17,3 +17,14 @@ def getProject(request, pk):
     project = Project.objects.get(id=pk)
     serializer = ProjectSerializer(project, many=False)
     return Response(serializer.data)
+
+@api_view(['PUT'])
+def updateComment(request, pk):
+    data = request.data
+    project = Project.objects.get(id=pk)
+    serializer = ProjectSerializer(instance=project, data=data)
+
+    if serializer.is_valid():
+        serializer.save()
+
+    return Response(serializer.data)
