@@ -18,14 +18,11 @@ def getProject(request, pk):
     serializer = ProjectSerializer(project, many=False)
     return Response(serializer.data)
 
-<<<<<<< HEAD
-
 @api_view(['GET'])
 def getContacts(request):
     contacts = Contact.objects.all()
     serializer = ContactSerializer(contacts, many=True)
     return Response(serializer.data)
-
     
 @api_view(['POST'])
 def createContact(request):
@@ -37,7 +34,7 @@ def createContact(request):
         email= data['email']
     )
     serializer = ContactSerializer(contact, many=False)
-=======
+
 @api_view(['PUT'])
 def updateComment(request, pk):
     data = request.data
@@ -47,5 +44,4 @@ def updateComment(request, pk):
     if serializer.is_valid():
         serializer.save()
 
->>>>>>> f38d82f59c6f3361d74e16056a6c8751d13c98ea
     return Response(serializer.data)
