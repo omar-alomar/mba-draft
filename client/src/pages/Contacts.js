@@ -1,10 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import ContactCard from '../components/ContactCard';
 import Modal from '../components/Modal';
 import Header from '../components/Header';
-import Button from '../components/Button';
+import AddIcon from '@mui/icons-material/Add';
 
 
 const Contacts = () => {
@@ -14,6 +13,8 @@ const Contacts = () => {
   const [email, setEmail] = useState('');
 
   let [contacts, setContacts] = useState([])
+  const [shouldShow, setShouldShow] = useState(false)
+
 
   let getContacts = async () => {
     let response = await fetch('http://127.0.0.1:8000/api/contacts/')
@@ -36,48 +37,34 @@ const Contacts = () => {
     }) 
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     createContact();
-    getContacts();
+    setShouldShow(false)
   }
-
-  
-  // const getContacts = () => {
-  //   axios.get('http://localhost:8081/getContacts')
-  //     .then((res) => {
-  //       console.log(res);
-
-  //   })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     })
 
   return (
     <div className="contacts mx-auto w-full">
       <Header Text="Contacts" />
-      <Modal type="red" text="New contact...">
-        <form className="contacts__form" onSubmit={handleSubmit}>
-          <label className="contacts__form__label"><span className="contacts__form__span">First name:</span>
+      <div className="m-3 mr-4 text-right">
+        <Modal type="green" text={<><AddIcon /> new contact</>} title='Create a new contact' shouldShow={shouldShow}>
+          <form className="contacts__form items-end" >
+            <label className="contacts__form__label">First name
             <input className="contacts__form__input" type="text" onChange={(e) => setFname(e.target.value)} /></label>
 
-          <label className="contacts__form__label"><span className="contacts__form__span">Last name:</span>
+            <label className="contacts__form__label">Last name
             <input className="contacts__form__input" type="text" onChange={(e) => setLname(e.target.value)} /></label>
 
-          <label className="contacts__form__label"><span className="contacts__form__span">Number:</span>
+            <label className="contacts__form__label">Number
             <input className="contacts__form__input" type="tel" onChange={(e) => setTel(e.target.value)} /></label>
 
-          <label className="contacts__form__label"><span className="contacts__form__span">Email:</span>
-            <input className="contacts__form__input" type="email" onChange={(e) => setEmail(e.target.value)} /></label>
+            <label className="contacts__form__label">Email
+              <input className="contacts__form__input" type="email" onChange={(e) => setEmail(e.target.value)} /></label>
 
-          <button type="submit" className="contacts__form__submit">Add contact</button>
-        </form>
-      </Modal>
+            <button type="submit" className="contacts__form__submit" onClick={handleSubmit}>Add contact</button>
+          </form>
+        </Modal>
+      </div>
 
-      {/* <div className="contacts__cards">
-        <button className="contacts__form__button" onClick={getContacts}>Get Contacts</button>
-      </div> */}
-      <Button type={'green'} text={'Add Contact'} />
       <div className='inset-0 flex flex-wrap justify-evenly'>
         
         
@@ -88,17 +75,6 @@ const Contacts = () => {
             email={contact.email}
             key={contact.id} />
         })}
-
-        <ContactCard name='loooooooooooooooooooooooooooooong' tel='(777) 777-7777' email='test_test@gmail.com' />
-        <ContactCard name='test' tel='(777) 777-7777' email='test_test@gmail.com' />
-        <ContactCard name='test' tel='(777) 777-7777' email='test_test@gmail.com' />
-        <ContactCard name='test' tel='(777) 777-7777' email='test_test@gmail.com' />
-        <ContactCard name='test' tel='(777) 777-7777' email='test_test@gmail.com' />
-        <ContactCard name='test' tel='(777) 777-7777' email='test_test@gmail.com' />
-        <ContactCard name='test' tel='(777) 777-7777' email='test_test@gmail.com' />
-        <ContactCard name='test' tel='(777) 777-7777' email='test_test@gmail.com' />
-        <ContactCard name='test' tel='(777) 777-7777' email='test_test@gmail.com' />
-        <ContactCard name='test' tel='(777) 777-7777' email='test_test@gmail.com' />
 
       </div>
     </div>

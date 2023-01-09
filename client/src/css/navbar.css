@@ -30,7 +30,7 @@
 
 @layer components {
     .navbar__profile {
-        @apply my-5 ml-5 flex;
+        @apply my-[26px] ml-5 flex;
     }
     .navbar__profile__item-text {
         @apply text-xl my-auto pl-2;

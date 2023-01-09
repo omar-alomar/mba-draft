@@ -13,43 +13,42 @@
         @apply mx-10 mb-5 py-2 px-4;
         @apply hover:bg-gray-100 text-black;
     }
+    .contacts__form {
+        @apply flex flex-col mr-20 ml-20 mt-12 mb-10
+    }
+    .contacts__form__label {
+        display: block;
+        @apply text-left font-semibold
+    }
+    
+    .contacts__form__span {
+        display: inline-block;
+        text-align: left;
+        width: 100px;
+    }
+    
+    .contacts__form__input {
+        @apply w-64 ml-12 mb-6 bg-gray-300 border-solid border-[1px] border-gray-400 focus:border-black rounded-sm;
+    }
+    
+    .contacts__form__submit {
+        margin-top: 5px;
+        border: 1px solid;
+        width: 100px;
+        margin-left: 180px;
+        background: #ffff;
+    }
+    
+    .contacts__form__button{
+        margin: 20px;
+        border: 1px solid;
+        width: 150px;
+    }
+    
+    .contacts__form__submit:hover {
+        cursor: pointer;
+    }
 }
 
-.contacts__form {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-}
 
 
-.contacts__form__label {
-    display: block;
-}
-
-.contacts__form__span {
-    display: inline-block;
-    text-align: left;
-    width: 100px;
-}
-
-.contacts__form__input {
-    border: 1px solid;
-}
-
-.contacts__form__submit {
-    margin-top: 5px;
-    border: 1px solid;
-    width: 100px;
-    margin-left: 180px;
-    background: #ffff;
-}
-
-.contacts__form__button{
-    margin: 20px;
-    border: 1px solid;
-    width: 150px;
-}
-
-.contacts__form__submit:hover {
-    cursor: pointer;
-}
