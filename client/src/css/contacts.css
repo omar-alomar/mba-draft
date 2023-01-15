@@ -13,6 +13,11 @@
         @apply mx-10 mb-5 py-2 px-4;
         @apply hover:bg-gray-100 text-black;
     }
+    .project__card__complete {
+        @apply bg-gray-600 text-white font-semibold rounded-lg shadow-md flex;
+        @apply mx-10 mb-5 py-2 px-4;
+        @apply hover:bg-gray-500 text-gray-400;
+    }
     .contacts__form {
         @apply flex flex-col mr-20 ml-20 mt-12 mb-10
     }
