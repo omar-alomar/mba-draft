@@ -23,9 +23,14 @@
     }
     .contacts__form__label {
         display: block;
-        @apply text-left font-semibold
+        @apply text-left font-semibold text-lg pb-2;
     }
     
+    .contacts__form__label__top {
+        display: block;
+        @apply text-right my-0 text-gray-500 text-sm;
+    }
+
     .contacts__form__span {
         display: inline-block;
         text-align: left;
@@ -33,9 +38,18 @@
     }
     
     .contacts__form__input {
-        @apply w-64 ml-12 mb-6 bg-gray-300 border-solid border-[1px] border-gray-400 focus:border-black rounded-sm;
+        --webkit--appearance: none;
+        @apply w-full px-4 py-2 mb-1 border-solid border-[1px] border-gray-200 focus:border-black rounded-sm bg-white;
+        @apply drop-shadow;
+        @apply rounded-lg;
+    }
+    .contacts__form__input:active {
+        @apply border-gray-500;
+        
     }
     
+
+
     .contacts__form__submit {
         margin-top: 5px;
         border: 1px solid;
