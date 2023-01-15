@@ -56,3 +56,20 @@ def editProject(request, pk):
         serializer.save()
     
     return Response(serializer.data)
+
+
+# Contact views
+@api_view(['POST'])
+def editContact(request, pk):
+    data = request.data
+    contact = Contact.objects.get(id=pk)
+    serializer = ContactSerializer(instance=contact, data=data)
+
+    if serializer.is_valid():
+        serializer.save()
+    
+    return Response(serializer.data)
+
+
+
+

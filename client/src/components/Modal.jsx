@@ -10,7 +10,7 @@ const Modal = (props) => {
         <>
         <Button type={props.type} text={props.text} clickFunction={() => setShouldShow(true)}/>
         {shouldShow && (
-            <div className='fixed flex justify-center items-center top-0 left-0 right-0 inset-0 bg-gray-400 bg-opacity-75 transition-opacity' onClick={() => setShouldShow(false)}>
+            <div className='z-50 fixed flex justify-center items-center top-0 left-0 right-0 inset-0 bg-gray-400 bg-opacity-75 transition-opacity' onClick={() => setShouldShow(false)}>
                 <div className='drop-shadow-2xl'>
                     <div className='flex flex-col '>
                         <div className='text-white flex flex-row justify-between bg-mbaRed rounded-t-xl'>

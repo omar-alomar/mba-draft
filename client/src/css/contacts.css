@@ -19,7 +19,7 @@
         @apply hover:bg-gray-500 text-gray-400;
     }
     .contacts__form {
-        @apply flex flex-col mr-20 ml-20 mt-12 mb-10
+        @apply flex flex-col mr-20 ml-20 mt-12 mb-4
     }
     .contacts__form__label {
         display: block;

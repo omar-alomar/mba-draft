@@ -43,28 +43,6 @@ const Contacts = () => {
   }
 
   return (
-    // <div className="contacts mx-auto w-full">
-    //   <Header Text="Contacts" />
-    //   <div className="m-3 mr-9 text-right">
-    //     <Modal type="add_contact" text={<><AddIcon /> new contact</>} title='Create a new contact' shouldShow={shouldShow}>
-    //       <form className="contacts__form items-end" >
-    //         <label className="contacts__form__label">First name
-    //         <input className="contacts__form__input" type="text" onChange={(e) => setFname(e.target.value)} /></label>
-
-    //         <label className="contacts__form__label">Last name
-    //         <input className="contacts__form__input" type="text" onChange={(e) => setLname(e.target.value)} /></label>
-
-    //         <label className="contacts__form__label">Number
-    //         <input className="contacts__form__input" type="tel" onChange={(e) => setTel(e.target.value)} /></label>
-
-    //         <label className="contacts__form__label">Email
-    //           <input className="contacts__form__input" type="email" onChange={(e) => setEmail(e.target.value)} /></label>
-
-    //         <Button type="green" text={"Add contact"} onClick={handleSubmit} />
-    //       </form>
-    //     </Modal>
-    //   </div>
-
     <div className="contacts mx-auto w-full">
       <Header Text="Contacts" />
       <div className="m-3 mr-9">
@@ -97,7 +75,7 @@ const Contacts = () => {
 
             </div>
             <div className='text-right'>
-              <Button type="green" text={"Add contact"} clickFunction={handleSubmit} className="w-[120px]"/>
+              <Button type="green" text={"Add contact"} clickFunction={handleSubmit} className="" />
             </div>
           </form>
         </Modal>
@@ -108,7 +86,8 @@ const Contacts = () => {
 
         {contacts.map((contact) => {
           return <ContactCard
-            name={contact.fName + ' ' + contact.lName}
+            fName={contact.fName}
+            lName={contact.lName}
             tel={contact.telephone}
             email={contact.email}
             key={contact.id} />
