@@ -34,6 +34,25 @@ def createContact(request):
         email= data['email']
     )
     serializer = ContactSerializer(contact, many=False)
+    return Response(serializer.data)
+
+
+@api_view(['POST'])
+def createProject(request):
+    data = request.data
+    project = Project.objects.create(
+        name = data['name'],
+        mbaNo = data['mbaNo'],
+        coFileNo = data['coFileNo'],
+        ded = data['ded'],
+        dld = data['dld'],
+        manager = data['manager'],
+        comments = data['comments'],
+        apfo = data['apfo'],
+        status = data['status']
+    )
+    serializer = ProjectSerializer(project, many=False)
+    return Response(serializer.data)
 
 @api_view(['PUT'])
 def updateComment(request, pk):
@@ -46,7 +65,7 @@ def updateComment(request, pk):
 
     return Response(serializer.data)
 
-@api_view(['POST'])
+@api_view(['PUT'])
 def editProject(request, pk):
     data = request.data
     project = Project.objects.get(id=pk)

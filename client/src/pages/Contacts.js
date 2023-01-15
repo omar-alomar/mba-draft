@@ -52,6 +52,7 @@ const Contacts = () => {
             <label className="contacts__form__label">Name</label>
 
             <div className='flex flex-col space-y-5 mb-5'>
+              
               <div className='flex flex-row space-x-5'>
                 <div className='flex-col'>
                   <input className="contacts__form__input" placeholder='Enter first name...' type="text" onChange={(e) => setFname(e.target.value)} />
@@ -75,7 +76,7 @@ const Contacts = () => {
 
             </div>
             <div className='text-right'>
-              <Button type="green" text={"Add contact"} clickFunction={handleSubmit} className="" />
+              <Button type="green" text={"Add contact"} clickFunction={handleSubmit} />
             </div>
           </form>
         </Modal>
