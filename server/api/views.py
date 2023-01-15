@@ -45,3 +45,14 @@ def updateComment(request, pk):
         serializer.save()
 
     return Response(serializer.data)
+
+@api_view(['POST'])
+def editProject(request, pk):
+    data = request.data
+    project = Project.objects.get(id=pk)
+    serializer = ProjectSerializer(instance=project, data=data)
+
+    if serializer.is_valid():
+        serializer.save()
+    
+    return Response(serializer.data)

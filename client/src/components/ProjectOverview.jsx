@@ -30,6 +30,7 @@ const ProjectOverview = (props) => {
         <div className='m-4'>
             <ArrowBackIcon className='bg-mbaRed text-white cursor-pointer' onClick={handleCommentSubmit}/>
             <h3 className='p-1'><span className='font-extrabold'>Project manager: </span>{project?.manager}</h3>
+            <h3 className='p-1'><span className='font-extrabold'>Project status: </span>{project?.status}</h3>
             <h3 className='p-1'><span className='font-extrabold'>MBA number: </span>{project?.mbaNo}</h3>
             <h3 className='p-1'><span className='font-extrabold'>Co File Number: </span>{project?.coFileNo}</h3>
             <h3 className='p-1'><span className='font-extrabold'>DED Reviewer: </span>{project?.ded}</h3>

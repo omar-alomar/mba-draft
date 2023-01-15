@@ -10,6 +10,7 @@ class Project(models.Model):
     manager = models.TextField()
     comments = models.TextField()
     apfo = models.DateField(null=True)
+    status = models.TextField()
 
 class Contact(models.Model):
     fName = models.TextField(max_length=255)
