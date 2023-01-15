@@ -97,7 +97,7 @@ const Contacts = () => {
 
             </div>
             <div className='text-right'>
-              <Button type="green" text={"Add contact"} onClick={handleSubmit} className="w-[120px]"/>
+              <Button type="green" text={"Add contact"} clickFunction={handleSubmit} className="w-[120px]"/>
             </div>
           </form>
         </Modal>
