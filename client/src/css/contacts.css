@@ -67,6 +67,10 @@
     .contacts__form__submit:hover {
         cursor: pointer;
     }
+
+    .akhu__habla {
+        cursor: pointer;
+    }
 }
 
 
