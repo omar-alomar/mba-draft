@@ -97,3 +97,9 @@ def deleteContact(request, pk):
     contact = Contact.objects.get(id=pk)
     contact.delete()
     return Response('Contact deleted')
+
+@api_view(['DELETE'])
+def deleteProject(request, pk):
+    project = Project.objects.get(id=pk)
+    project.delete()
+    return Response('Project deleted')

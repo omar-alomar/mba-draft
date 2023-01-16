@@ -7,6 +7,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Modal from '../components/Modal'
 import Button from '../components/Button'
 
+
 const ProjectOverview = (props) => {
 
   const location = useLocation();
@@ -59,10 +60,30 @@ const ProjectOverview = (props) => {
     navigate('/projects')
   }
 
-  let handleSubmit = () => {
+  let handleEdit = () => {
     editProject()
     setShouldShow(false)
     navigate('/projects')
+  }
+
+  let deleteProject = async ()=> {
+    fetch(`http://127.0.0.1:8000/api/projects/${project.id}/delete/`, {
+      method:'DELETE',
+      'headers': {
+        'Content-Type': 'application/json'  
+      }
+    })
+  }
+
+  const handleDelete = () => {
+    deleteProject();
+    navigate('/projects')
+
+  }
+
+  const handleCancel = () => {
+    setShouldShow(false)
+    navigate(`/projects`)
   }
 
   return (
@@ -144,13 +165,26 @@ const ProjectOverview = (props) => {
 
                 <div className='text-right'>
                 </div>
-              <Button type="green" text={"Confirm changes"} clickFunction={handleSubmit} className="mb-3 mr-5" />
+              <Button type="green" text={"Confirm changes"} clickFunction={handleEdit} className="mb-3 mr-5" />
               </form>
 
 
             </Modal>
-
+              
             <Modal type="none" text={<div className=' m-1 text-gray-500 hover:text-red-500'><DeleteIcon /></div>} title='Delete Project' shouldShow={shouldShow}>
+              <form>
+                <label className="contacts__form__label text-left mt-8 mb-7 ml-5 mr-36">Are you sure you want to delete this project?</label>
+
+                <hr className='mt-5 mb-5 w-full'></hr>
+                <div className='flex flex-row justify-end'>
+                  <div className='text-right'>
+                    <Button type="base" text={"Cancel"} clickFunction={handleCancel} className="mb-5 mr-2" />
+                  </div>
+                  <div className='text-right'>
+                    <Button type="red" text={"Delete project"} clickFunction={handleDelete} className="mb-5 mr-5" />
+                  </div>
+                </div>
+              </form>
             </Modal>
           </span>
         </span>
