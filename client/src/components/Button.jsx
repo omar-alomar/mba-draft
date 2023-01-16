@@ -6,8 +6,9 @@ const Button = ( {type, text, clickFunction, className} ) => {
         yellow: 'btn btn-yellow',
         red: 'btn btn-red',
         transparent: 'btn btn-transparent',
-        add_contact: 'btn btn-add-contact',
-        none: ''
+        base: 'btn btn-base',
+        cancel: 'btn btn-cancel',
+        none: 'btn btn-none'
     }
   return (
     <>

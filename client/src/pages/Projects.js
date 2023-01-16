@@ -51,7 +51,6 @@ const Projects = () => {
   })}
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     createProject();
     // setShouldShow(false)
   }
