@@ -50,9 +50,9 @@ const Projects = () => {
       })
   })}
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     createProject();
-    // setShouldShow(false)
+    setShouldShow(false)
   }
 
   return (
@@ -60,7 +60,7 @@ const Projects = () => {
       <div className='flex flex-col w-full'>
         <Header Text='Projects' />
         <div className="m-3 mr-9">
-          <Modal type="add_contact" text={<><AddIcon /> new project</>} title='Create a new project' shouldShow={shouldShow} >
+          <Modal type="base" text={<><AddIcon /> new project</>} title='Create a new project' shouldShow={shouldShow} >
             <form className="contacts__form" >
               <div className='flex flex-col space-y-5 mb-5'>
                 <div className='flex flex-row space-x-5'>
@@ -125,9 +125,10 @@ const Projects = () => {
               </div>
 
               <div className='text-right'>
-                <Button type="green" text={"Add project"} clickFunction={handleSubmit} />
               </div>
+            <Button type="green" text={"Add project"} clickFunction={handleSubmit}  className="mb-3 mr-5" />
             </form>
+
           </Modal>
         </div>
         <div className='m-4'>

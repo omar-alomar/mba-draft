@@ -73,10 +73,15 @@ def editProject(request, pk):
 
     if serializer.is_valid():
         serializer.save()
+        print(serializer.errors)
+    else:
+        print(serializer.errors)
     
     return Response(serializer.data)
 
-@api_view(['POST'])
+
+# Contact views
+@api_view(['PUT'])
 def editContact(request, pk):
     data = request.data
     contact = Contact.objects.get(id=pk)
