@@ -76,8 +76,6 @@ def editProject(request, pk):
     
     return Response(serializer.data)
 
-
-# Contact views
 @api_view(['POST'])
 def editContact(request, pk):
     data = request.data
@@ -89,6 +87,8 @@ def editContact(request, pk):
     
     return Response(serializer.data)
 
-
-
-
+@api_view(['DELETE'])
+def deleteContact(request, pk):
+    contact = Contact.objects.get(id=pk)
+    contact.delete()
+    return Response('Contact deleted')
