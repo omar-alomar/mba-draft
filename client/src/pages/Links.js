@@ -4,12 +4,14 @@ import Link from '../components/Link'
 import Button from '../components/Button'
 import Modal from '../components/Modal'
 import AddIcon from '@mui/icons-material/Add'
+import { useNavigate } from 'react-router-dom'
 
 const Links = () => {
   const [links, setLinks] = useState([])
   const [newName, setNewName] = useState('')
   const [newUrl, setNewUrl] = useState('')
   const [shouldShow, setShouldShow] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     getLinks()
@@ -35,8 +37,15 @@ const Links = () => {
 
   const handleSubmit = () => {
     createLink();
-    setShouldShow(false)
+    navigate(0)
   }
+
+  // const urlParser = () => {
+  //   if ((newUrl.slice(0,8) !== 'https://') || (newUrl.slice(0,7) !== 'http://')) {
+  //     setNewUrl('https://' + newUrl)
+  //     console.log(newUrl.slice(0,8))
+  //   }
+  // }
   
   return (
     <>

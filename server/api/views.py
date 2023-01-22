@@ -128,7 +128,7 @@ def createLink(request):
         name = data['name'],
         url= data['url']
     )
-    serializer = ContactSerializer(link, many=False)
+    serializer = LinkSerializer(link, many=False)
     return Response(serializer.data)
 
 @api_view(['DELETE'])
