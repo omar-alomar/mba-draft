@@ -4,7 +4,7 @@ import React from 'react'
 const Header = ({Text}) => {
   return (
     <div className='w-full'>
-      <div className='flex w-full bg-[#e9e9e9] font-Fira'>
+      <div className='flex w-full bg-gray-100 font-Fira border-solid border-b-2 border-gray-200 drop-shadow'>
         <div className='basis-1/2'>
           <img className='mr-auto pl-10 py-5' src='\Logo(edited).png'></img>
         </div>
@@ -21,5 +21,5 @@ export default Header
 
 
 
-
+// bg-[#e9e9e9]
 // abook mo7taram ya omar

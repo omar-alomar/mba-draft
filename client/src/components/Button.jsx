@@ -8,7 +8,7 @@ const Button = ( {type, text, clickFunction, className} ) => {
         transparent: 'btn btn-transparent',
         base: 'btn btn-base',
         cancel: 'btn btn-cancel',
-        none: 'btn btn-none'
+        none: 'btn'
     }
   return (
     <>

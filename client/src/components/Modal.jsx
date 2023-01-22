@@ -8,7 +8,7 @@ const Modal = (props) => {
     
     return (
         <>
-        <Button type={props.type} text={props.text} clickFunction={() => setShouldShow(true)}/>
+        <Button type={props.type} text={props.text} clickFunction={() => setShouldShow(true)} className={props.className}/>
         {shouldShow && (
             <div className='z-50 fixed flex justify-center items-center top-0 left-0 right-0 inset-0 bg-gray-400 bg-opacity-75 transition-opacity' onClick={() => setShouldShow(false)}>
                 <div className={'drop-shadow-2xl' + ' w-[' + props.width + ']'}>
