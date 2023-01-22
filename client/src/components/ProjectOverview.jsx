@@ -167,6 +167,8 @@ const ProjectOverview = (props) => {
                 </div>
               <Button type="green" text={"Confirm changes"} clickFunction={handleEdit} className="mb-3 mr-5" />
               </form>
+
+
             </Modal>
               
             <Modal type="none" text={<div className=' m-1 text-gray-500 hover:text-red-500'><DeleteIcon /></div>} title='Delete Project' shouldShow={shouldShow}>

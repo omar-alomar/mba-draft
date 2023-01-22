@@ -103,3 +103,36 @@ def deleteProject(request, pk):
     project = Project.objects.get(id=pk)
     project.delete()
     return Response('Project deleted')
+
+@api_view(['GET'])
+def getLinks(request):
+    links = Link.objects.all()
+    serializer = LinkSerializer(links, many=True)
+    return Response(serializer.data)
+
+@api_view(['PUT'])
+def editLink(request, pk):
+    data = request.data
+    link = Link.objects.get(id=pk)
+    serializer = LinkSerializer(instance=link, data=data)
+
+    if serializer.is_valid():
+        serializer.save()
+    
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def createLink(request):
+    data = request.data
+    link = Link.objects.create(
+        name = data['name'],
+        url= data['url']
+    )
+    serializer = ContactSerializer(link, many=False)
+    return Response(serializer.data)
+
+@api_view(['DELETE'])
+def deleteLink(request, pk):
+    link = Link.objects.get(id=pk)
+    link.delete()
+    return Response('Link deleted')

@@ -17,3 +17,7 @@ class Contact(models.Model):
     lName = models.TextField(max_length=255, null=True)
     telephone = models.TextField()
     email = models.TextField()
+
+class Link(models.Model):
+    name = models.TextField()
+    url = models.URLField()
