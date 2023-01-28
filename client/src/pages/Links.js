@@ -40,10 +40,9 @@ const Links = () => {
     navigate(0)
   }
 
-  // const urlParser = () => {
-  //   if ((newUrl.slice(0,8) !== 'https://') || (newUrl.slice(0,7) !== 'http://')) {
-  //     setNewUrl('https://' + newUrl)
-  //     console.log(newUrl.slice(0,8))
+  // const urlParser = (url) => {
+  //   if ((url.slice(0,8) !== 'https://') || (url.slice(0,7) !== 'http://')) {
+  //     setNewUrl('https://' + url)
   //   }
   // }
   
@@ -51,7 +50,7 @@ const Links = () => {
     <>
     <div className="flex flex-col w-full">
         <Header Text="Links" />
-        <div className="m-3 mr-9">
+        <div className="m-3 mr-9 ">
           <Modal type="base" text={<><AddIcon /> new link</>} title='Add a new link' shouldShow={shouldShow} >
             <form className="contacts__form" >
               <div className='flex flex-col space-y-5 mb-5'>
@@ -75,7 +74,7 @@ const Links = () => {
         </div>
         
         <div className="m-3">
-          <ul className="list-disc list-inside">
+          <ul className="list-disc list-inside " >
             {links.map((link, index) => (
                   <Link link={link} key={link.id}/>
               ))}

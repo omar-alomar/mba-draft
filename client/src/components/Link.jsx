@@ -53,7 +53,7 @@ const Link = ({link}) => {
 
   return (
     <>
-      <div className="flex flex-row">
+      <div className="flex flex-row hover:bg-gray-200 rounded-md">
         <CircleIcon sx={{fontSize: 7}} className="my-auto mr-3 ml-1" />
         <span className="text-xl my-auto">{link.name}:</span>&nbsp;
         <span className="my-auto text-l text-blue-500 underline">
