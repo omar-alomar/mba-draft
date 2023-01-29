@@ -31,6 +31,14 @@ const Announcement = ({ title, text, dateTime, id }) => {
   }
 
 
+  const dateObj = new Date(dateTime)
+  const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const month= ["January","February","March","April","May","June","July",
+            "August","September","October","November","December"];
+  const localeString = dateObj.toLocaleString()
+  const ampmtime = localeString.slice(11,15) + " " + localeString.slice(18, 21)
+
+
   return (
     <div className='overflow-visible relative'>
       
@@ -53,11 +61,16 @@ const Announcement = ({ title, text, dateTime, id }) => {
         <div className='flex flex-row'>
 
           <div className='w-full bg-gray-200'>
-            <h2 className='text-xl py-2 pl-4'> {title}  </h2>
-             <td>{dateTime}</td>
+            <h2 className='text-2xl font-bold p-2'> {title}  </h2>
+            <div className='flex flex-row justify-between border border-t-gray-400 border-b-gray-400 text-sm'>
+              <span className='pl-1'>{month[dateObj.getMonth()] + ' ' + dateObj.getDay() + ', ' + dateObj.getFullYear()}</span>
+              <span className='pr-1'>{ampmtime}</span>
+            </div>
           </div>
         </div>
-        {text}
+        <div className='text-md p-2'>
+          {text}
+        </div>
       </div>
     </div>
   )

@@ -55,11 +55,11 @@ const ContactCard = ({ fName, lName, tel, email, id }) => {
     <>
 
       <div className='contact__card relative'>
-        <img src='profilepic.png' className='w-36 lg:w-56 ml-0 p-2 ' />
+        <img src='profilepic.png' className='w-20 lg:w-32 m-2 border-2 border-gray-400 rounded-xl' />
         <div className='flex flex-col ml-2 self-center w-[15em]'>
-          <h2 className='pt-1 pb-3 text-ellipsis'>Name: {fName + ' ' + lName}</h2>
-          <h3 className='pb-3 text-ellipsis'>Telephone: {tel}</h3>
-          <h3 className='pb-3 text-ellipsis'>Email: {email}</h3>
+          <h2 className='text-sm pt-1 pb-3 text-ellipsis'>Name: {fName + ' ' + lName}</h2>
+          <h3 className='text-sm pb-3 text-ellipsis'>Telephone: {tel}</h3>
+          <h3 className=' text-sm pb-3 text-ellipsis'>Email: {email}</h3>
         </div>
         <div className="">
           {/* DELETE ICON */}
