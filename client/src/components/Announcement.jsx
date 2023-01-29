@@ -54,7 +54,7 @@ const Announcement = ({ title, text, dateTime, id }) => {
 
           <div className='w-full bg-gray-200'>
             <h2 className='text-xl py-2 pl-4'> {title}  </h2>
-            {dateTime}
+             <td>{dateTime}</td>
           </div>
         </div>
         {text}

@@ -123,12 +123,14 @@ def createAnnouncement(request):
     serializer = AnnouncementSerializer(announcement, many=False)
     return Response(serializer.data)
 
-# Link views
+
 @api_view(['DELETE'])
 def deleteAnnouncement(request, pk):
     announcement = Announcement.objects.get(id=pk)
     announcement.delete()
     return Response('Announcement deleted')
+
+# Link views
 @api_view(['GET'])
 def getLinks(request):
     links = Link.objects.all()
