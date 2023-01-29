@@ -17,3 +17,8 @@ class Contact(models.Model):
     lName = models.TextField(max_length=255, null=True)
     telephone = models.TextField()
     email = models.TextField()
+
+class Announcement(models.Model):
+    title = models.TextField(max_length=255)
+    body = models.TextField(max_length=255, null=True)
+    date = models.DateTimeField(auto_now_add=True, blank=True, null=True)

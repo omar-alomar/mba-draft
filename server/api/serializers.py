@@ -10,3 +10,8 @@ class ContactSerializer(ModelSerializer):
     class Meta:
         model = Contact
         fields = '__all__'
+
+class AnnouncementSerializer(ModelSerializer):
+    class Meta:
+        model = Announcement
+        fields = '__all__'

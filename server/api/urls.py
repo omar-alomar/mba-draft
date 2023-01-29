@@ -13,5 +13,9 @@ urlpatterns = [
     path('contacts/', views.getContacts, name='contacts'),
     path('contacts/create/', views.createContact, name='create-contact'),
     path('contacts/<str:pk>/edit/', views.editContact, name='edit-contact'),
-    path('contacts/<str:pk>/delete/', views.deleteContact, name='delete-contact')
+    path('contacts/<str:pk>/delete/', views.deleteContact, name='delete-contact'),
+
+    path('announcements/', views.getAnnouncements, name='announcements'),
+    path('announcements/create/', views.createAnnouncement, name='create-announcement'),
+    path('announcements/<str:pk>/delete/', views.deleteAnnouncement, name='delete-announcement')
 ]

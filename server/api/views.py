@@ -103,3 +103,28 @@ def deleteProject(request, pk):
     project = Project.objects.get(id=pk)
     project.delete()
     return Response('Project deleted')
+
+
+# Announcement views
+@api_view(['GET'])
+def getAnnouncements(request):
+    announcements = Announcement.objects.all()
+    serializer = AnnouncementSerializer(announcements, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def createAnnouncement(request):
+    data = request.data
+    announcement = Announcement.objects.create(
+        title = data['title'],
+        body = data['body'],
+    )
+    serializer = AnnouncementSerializer(announcement, many=False)
+    return Response(serializer.data)
+
+
+@api_view(['DELETE'])
+def deleteAnnouncement(request, pk):
+    announcement = Announcement.objects.get(id=pk)
+    announcement.delete()
+    return Response('Announcement deleted')
