@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import *
 from .serializers import *
+from urllib import parse
 
 # Create your views here.
 
@@ -122,9 +123,41 @@ def createAnnouncement(request):
     serializer = AnnouncementSerializer(announcement, many=False)
     return Response(serializer.data)
 
-
+# Link views
 @api_view(['DELETE'])
 def deleteAnnouncement(request, pk):
     announcement = Announcement.objects.get(id=pk)
     announcement.delete()
     return Response('Announcement deleted')
+@api_view(['GET'])
+def getLinks(request):
+    links = Link.objects.all()
+    serializer = LinkSerializer(links, many=True)
+    return Response(serializer.data)
+
+@api_view(['PUT'])
+def editLink(request, pk):
+    data = request.data
+    link = Link.objects.get(id=pk)
+    serializer = LinkSerializer(instance=link, data=data)
+
+    if serializer.is_valid():
+        serializer.save()
+    
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def createLink(request):
+    data = request.data
+    link = Link.objects.create(
+        name = data['name'],
+        url= data['url']
+    )
+    serializer = LinkSerializer(link, many=False)
+    return Response(serializer.data)
+
+@api_view(['DELETE'])
+def deleteLink(request, pk):
+    link = Link.objects.get(id=pk)
+    link.delete()
+    return Response('Link deleted')

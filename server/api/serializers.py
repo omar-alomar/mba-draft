@@ -14,4 +14,8 @@ class ContactSerializer(ModelSerializer):
 class AnnouncementSerializer(ModelSerializer):
     class Meta:
         model = Announcement
+        
+class LinkSerializer(ModelSerializer):
+    class Meta:
+        model = Link
         fields = '__all__'
